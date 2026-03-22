@@ -1,0 +1,20 @@
+# Arvuta.eu – Eesti finantskalkulaatorid
+
+Arvuta.eu on tasuta eestikeelne finantskalkulaatorite veebileht.
+
+## Kalkulaatorid
+
+- /automaks – Automaksu kalkulaator 2026: registreerimismaks ja aastamaks CO₂, võimsuse, aasta ja kütuse põhjal
+- /netopalk – Netopalga kalkulaator 2026: brutopalgast netopalk, tulumaks, sotsiaalmaks
+- /laen – Laenukalkulaator: kuumakse, koguintress, annuiteet vs võrdne
+- /kodulaen – Kodulaenu kalkulaator: hüpoteeklaen, omafinantseering, kogukulu
+- /fie – FIE maksude kalkulaator 2026: tulumaks, sotsiaalmaks, netotulu
+- /ou-palk-dividend – OÜ palk vs dividend: netotulu võrdlus
+- /saastud – Säästude kalkulaator: liitintress, kasvu graafik
+- /uuritootlus – Üüritootluse kalkulaator: bruto- ja netarentaablus
+
+## Allikad
+Arvutused põhinevad Eesti seadusel: riigiteataja.ee, emta.ee
+
+## Litsents
+Tasuta kasutamine. © Arvuta.eu 2026

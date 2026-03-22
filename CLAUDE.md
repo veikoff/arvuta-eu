@@ -37,9 +37,13 @@ Allikas: Eesti automaksu seadus 2026 (riigiteataja.ee)
 
 ### 2. /netopalk – Netopalga kalkulaator 2026
 Sisendid: brutopalk (€/kuus), II sammas (jah/ei)
-Väljund: netopalk, tulumaks 20%, sotsiaalmaks 33%,
-töötukindlustus 1.6%, II sammas 2%
-Näita ka aastane kokkuvõte
+Väljund: netopalk, tulumaks 22%, sotsiaalmaks 33%,
+töötukindlustus 1.6%, II sammas 2%, arvutuse kirjeldus
+
+### 2b. /brutopalk – Brutopalgast netopalk (tagurpidi)
+Sisendid: netopalk (€/kuus), II sammas (jah/ei)
+Väljund: brutopalk, tulumaks, sotsiaalmaks, töötukindlustus, tööandja kogukulu
+Loogika: binaarne otsing – leiab brutopalgaväärtuse millele vastab sisestatud netopalk
 
 ### 3. /laen – Laenukalkulaator
 Sisendid: summa (€), intress (%), periood (kuud), tüüp (annuiteet/võrdne)
