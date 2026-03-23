@@ -28,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="et" className={`${plusJakarta.variable} ${dmMono.variable}`}>
       <head>
+        <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5611259412857243" crossOrigin="anonymous" strategy="afterInteractive" />
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-7NLB1Q52K0" strategy="afterInteractive" />
         <Script id="gtag-init" strategy="afterInteractive">{`
           window.dataLayer = window.dataLayer || [];
