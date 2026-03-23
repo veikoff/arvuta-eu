@@ -17,6 +17,7 @@ export default function Footer() {
             <li><Link href="/automaks" className="hover:text-white">Automaksu kalkulaator</Link></li>
             <li><Link href="/netopalk" className="hover:text-white">Netopalga kalkulaator</Link></li>
             <li><Link href="/brutopalk" className="hover:text-white">Brutopalga kalkulaator</Link></li>
+            <li><Link href="/dividend" className="hover:text-white">Dividendi kalkulaator</Link></li>
             {/* TODO: lisatakse kui kalkulaatorid valmis */}
             {/* <li><Link href="/laen" className="hover:text-white">Laenukalkulaator</Link></li> */}
             {/* <li><Link href="/kodulaen" className="hover:text-white">Kodulaenu kalkulaator</Link></li> */}
