@@ -7,6 +7,7 @@ const calculators = [
   { href: "/netopalk", label: "Bruto → Neto" },
   { href: "/brutopalk", label: "Neto → Bruto" },
   { href: "/dividend", label: "Dividend" },
+  { href: "/laen", label: "Laen" },
   // TODO: lisatakse kui kalkulaator valmis
   // { href: "/laen", label: "Laen" },
   // { href: "/kodulaen", label: "Kodulaen" },

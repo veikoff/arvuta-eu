@@ -7,6 +7,7 @@ const categories = [
       { href: "/netopalk", label: "Bruto → Neto kalkulaator", desc: "Arvuta netopalk brutopalgast 2026. aastal" },
       { href: "/brutopalk", label: "Neto → Bruto kalkulaator", desc: "Sisesta soovitud netopalk, saa brutopalk" },
       { href: "/dividend", label: "Dividendi kalkulaator", desc: "Arvuta dividendimaks ja ettevõtte kogukulu 2026" },
+      { href: "/laen", label: "Laenukalkulaator", desc: "Arvuta kuumakse, koguintress ja tagasimaksegraafik" },
       // TODO: lisatakse kui kalkulaator valmis
       // { href: "/fie", label: "FIE maksude kalkulaator", desc: "FIE tulumaks ja sotsiaalmaks 2026" },
       // { href: "/ou-palk-dividend", label: "OÜ palk vs dividend", desc: "Võrdle netotulu erinevate jaotusviisidega" },
