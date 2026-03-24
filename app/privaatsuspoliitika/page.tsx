@@ -16,7 +16,7 @@ export default function PrivaatsuspoliitikPage() {
         <section>
           <h2 className="text-lg font-semibold text-gray-800 mb-2">1. Üldinfo</h2>
           <p>
-            Arvuta.eu (edaspidi „sait") on tasuta eestikeelne finantskalkulaatorite veebileht.
+            Arvuta.eu (edaspidi &bdquo;sait&ldquo;) on tasuta eestikeelne finantskalkulaatorite veebileht.
             Saiti haldab eraisik. Käesolev privaatsuspoliitika selgitab, milliseid andmeid
             kogutakse, kuidas neid kasutatakse ja millised on teie õigused.
           </p>
