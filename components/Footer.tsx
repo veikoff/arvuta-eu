@@ -55,9 +55,12 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-gray-700 mt-4">
-        <p className="text-center text-sm py-4 text-gray-500">
-          © Arvuta.eu 2026
-        </p>
+        <div className="flex items-center justify-center gap-4 py-4">
+          <p className="text-sm text-gray-500">© Arvuta.eu 2026</p>
+          <Link href="/privaatsuspoliitika" className="text-sm text-gray-500 hover:text-white">
+            Privaatsuspoliitika
+          </Link>
+        </div>
       </div>
 
       {/* Ad placeholder */}
