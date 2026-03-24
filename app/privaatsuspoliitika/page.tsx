@@ -73,7 +73,7 @@ export default function PrivaatsuspoliitikPage() {
             ja kasutatav seade. Andmeid ei seostata isikuga.
           </p>
           <p className="mt-2">
-            Google&apos;i privaatsuspoliitika:{" "}
+            Google privaatsuspoliitika:{" "}
             <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#1E40AF] underline">
               policies.google.com/privacy
             </a>
