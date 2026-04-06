@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Dividendi kalkulaator 2026 – Arvuta dividendimaks | Arvuta.eu",
   description:
     "Arvuta dividendide väljamaksmisega kaasnev tulumaks 2026. aastal. Sisesta soovitud netodividend ja kalkulaator näitab ettevõtte kogukulu ning tasutava tulumaksu.",
+  alternates: {
+    canonical: '/dividend',
+  },
 };
 
 const faqSchema = {

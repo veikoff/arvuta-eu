@@ -17,9 +17,13 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://arvuta.eu'),
   title: "Arvuta.eu – Eesti finantskalkulaatorid 2026",
   description:
     "Tasuta eestikeelsed finantskalkulaatorid: automaks, netopalk, laen, kodulaen, säästud, FIE maksud ja palju muud.",
+  alternates: {
+    canonical: '/',
+  },
 };
 
 export default function RootLayout({

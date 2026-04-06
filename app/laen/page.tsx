@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Laenukalkulaator 2026 – Arvuta kuumakse ja koguintress | Arvuta.eu",
   description:
     "Arvuta laenu kuumakse, koguintress ja tagasimaksegraafik. Toetab annuiteeti ja võrdset põhiosa. Sisesta laenusumma, intress ja periood.",
+  alternates: {
+    canonical: '/laen',
+  },
 };
 
 const faqSchema = {

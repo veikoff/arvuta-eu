@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Netopalga kalkulaator 2026 – Arvuta netopalk brutopalgast | Arvuta.eu",
   description:
     "Arvuta oma netopalk brutopalgast 2026. aastal. Tulumaks 22%, sotsiaalmaks 33%, töötukindlustus 1,6%, II sammas. Näeb ka tööandja kogukulu ja aastast kokkuvõtet.",
+  alternates: {
+    canonical: '/netopalk',
+  },
 };
 
 const faqSchema = {

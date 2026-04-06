@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Automaksu kalkulaator 2026 – Registreerimis- ja aastamaks | Arvuta.eu",
   description:
     "Arvuta oma auto registreerimismaks ja aastamaks 2026. aastal. Sisesta CO₂ heitkogus, võimsus, valmistamisaasta ja kütuse liik – tulemus kohe.",
+  alternates: {
+    canonical: '/automaks',
+  },
 };
 
 const faqSchema = {

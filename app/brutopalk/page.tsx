@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Netopalgast brutopalk 2026 – Tagurpidi palgakalkulaator | Arvuta.eu",
   description:
     "Sisesta soovitud netopalk ja arvuta vajalik brutopalk 2026. aastal. Näed tulumaksu, töötukindlustuse ja II pensionisamba mõju ning tööandja tegelikku kogukulu.",
+  alternates: {
+    canonical: '/brutopalk',
+  },
 };
 
 const faqSchema = {

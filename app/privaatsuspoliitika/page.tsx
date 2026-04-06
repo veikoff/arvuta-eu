@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privaatsuspoliitika | Arvuta.eu",
   description: "Arvuta.eu privaatsuspoliitika – kuidas me kasutame küpsiseid ja töötleme andmeid.",
+  alternates: {
+    canonical: '/privaatsuspoliitika',
+  },
 };
 
 export default function PrivaatsuspoliitikPage() {
