@@ -84,7 +84,7 @@ export default function DividendKalkulaator() {
               </div>
               <div className="flex justify-between items-center py-1.5 border-b border-gray-100">
                 <div>
-                  <span className="text-sm text-red-500">Tulumaks (24/76)</span>
+                  <span className="text-sm text-red-500">Tulumaks (22/78)</span>
                   <span className="text-xs text-gray-400 ml-1">({r.efektiivseMaksumaar}% kogusummast)</span>
                 </div>
                 <span className="text-sm font-medium font-mono text-red-500">+{formatEUR(r.tulumaks)}</span>
@@ -101,7 +101,7 @@ export default function DividendKalkulaator() {
               <ul className="space-y-0.5">
                 {[
                   `Netodividend: ${formatEUR(r.netodividend)}`,
-                  `Tulumaks (24/76): ${formatEUR(r.netodividend)} × 24/76 = ${formatEUR(r.tulumaks)}`,
+                  `Tulumaks (22/78): ${formatEUR(r.netodividend)} × 22/78 = ${formatEUR(r.tulumaks)}`,
                   `Ettevõtte kogukulu: ${formatEUR(r.netodividend)} + ${formatEUR(r.tulumaks)} = ${formatEUR(r.ettevotteKogukulu)}`,
                 ].map((s, i) => (
                   <li key={i} className="text-xs text-gray-600 flex gap-2">

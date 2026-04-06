@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import DividendKalkulaator from "@/components/calculators/DividendKalkulaator";
 
 export const metadata: Metadata = {
-  title: "Dividendi kalkulaator 2026 – Arvuta dividendimaks 24% | Arvuta.eu",
+  title: "Dividendi kalkulaator 2026 – Arvuta dividendimaks 22% | Arvuta.eu",
   description:
-    "Arvuta dividendide väljamaksmisega kaasnev tulumaks 2026. aastal. Tulumaksumäär on 24/76. Sisesta soovitud netodividend ja kalkulaator näitab ettevõtte kogukulu.",
+    "Arvuta dividendide väljamaksmisega kaasnev tulumaks 2026. aastal. Tulumaksumäär on 22/78. Sisesta soovitud netodividend ja kalkulaator näitab ettevõtte kogukulu.",
   alternates: {
     canonical: '/dividend',
   },
@@ -19,7 +19,7 @@ const faqSchema = {
       name: "Mis on dividendimaksu määr Eestis 2026. aastal?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "2026. aastast kehtib Eestis dividendidele tulumaksumäär 24/76. See tähendab, et kui omanik soovib saada 1 000 € netodividendi, arvutatakse tulumaks valemiga 1 000 × 24 ÷ 76 = 315,79 € ja ettevõtte kogukulu on 1 315,79 €. Varem (2025. aastal) kehtis määr 22/78. Tulumaksu maksab ettevõte, mitte eraisikust omanik.",
+        text: "2026. aastal kehtib Eestis dividendidele tulumaksumäär 22/78 – sama mis 2025. aastal. See tähendab, et kui omanik soovib saada 1 000 € netodividendi, arvutatakse tulumaks valemiga 1 000 × 22 ÷ 78 = 282,05 € ja ettevõtte kogukulu on 1 282,05 €. Tulumaksu maksab ettevõte, mitte eraisikust omanik. Allikas: emta.ee.",
       },
     },
     {
@@ -35,7 +35,7 @@ const faqSchema = {
       name: "Kas 14% dividendimaksu soodusmäär kehtib 2026. aastal?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Ei, 14/86 soodusmäär kaotati alates 1. jaanuarist 2025 ja see ei kehti 2026. aastal. Enne 2025. aastat said regulaarselt dividende maksvad ettevõtted kasutada madalamat määra, kuid see võimalus on nüüd lõpetatud. Kõikidele dividendiväljamaksetele 2026. aastal kehtib ühtne määr 24/76.",
+        text: "Ei, 14/86 soodusmäär kaotati alates 1. jaanuarist 2025 ja see ei kehti 2026. aastal. Enne 2025. aastat said regulaarselt dividende maksvad ettevõtted kasutada madalamat 14/86 määra, kuid see võimalus on nüüd lõpetatud. Kõikidele dividendiväljamaksetele 2025. ja 2026. aastal kehtib ühtne määr 22/78.",
       },
     },
     {
@@ -51,7 +51,7 @@ const faqSchema = {
       name: "Kas palk või dividend – kumb on maksusoodsam 2026?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sõltub konkreetsest olukorrast. Palgalt tasub ettevõte sotsiaalmaksu 33% + töötukindlustus 0,8%, kokku ~33,8% lisaks brutopalgale. Dividendilt maksab ettevõte tulumaksu 24% (24/76 valem). Suuremate summade puhul on dividend tavaliselt maksusoodsam. Samas on sotsiaalmaks pensioni- ja ravikindlustuse alus – ilma palgata need hüvitised ei kogu. Paljud ettevõtjad kombineerivad: minimaalne palk sotsiaalkindlustuseks + dividend ülejäänud sissetulekuks.",
+        text: "Sõltub konkreetsest olukorrast. Palgalt tasub ettevõte sotsiaalmaksu 33% + töötukindlustus 0,8%, kokku ~33,8% lisaks brutopalgale. Dividendilt maksab ettevõte tulumaksu 22% (22/78 valem). Suuremate summade puhul on dividend tavaliselt maksusoodsam. Samas on sotsiaalmaks pensioni- ja ravikindlustuse alus – ilma palgata need hüvitised ei kogu. Paljud ettevõtjad kombineerivad: minimaalne palk sotsiaalkindlustuseks + dividend ülejäänud sissetulekuks.",
       },
     },
     {
@@ -79,7 +79,7 @@ const howToSchema = {
   name: "Kuidas arvutada dividendimaks 2026",
   step: [
     { "@type": "HowToStep", text: "Sisesta soovitud netodividend – summa, mille omanik kätte saab." },
-    { "@type": "HowToStep", text: "Kalkulaator arvutab automaatselt tulumaksu valemiga: netodividend × 24 ÷ 76." },
+    { "@type": "HowToStep", text: "Kalkulaator arvutab automaatselt tulumaksu valemiga: netodividend × 22 ÷ 78." },
     { "@type": "HowToStep", text: "Näed ettevõtte kogukulu – netodividend pluss tulumaks." },
     { "@type": "HowToStep", text: "Kontrolli, kas ettevõttel on piisavalt jaotamata kasumit dividendi väljamaksmiseks." },
   ],
@@ -92,7 +92,7 @@ const webAppSchema = {
   url: "https://arvuta.eu/dividend",
   applicationCategory: "FinanceApplication",
   operatingSystem: "Web",
-  description: "Arvuta dividendimaks (24/76) ja ettevõtte kogukulu 2026. aastal.",
+  description: "Arvuta dividendimaks (22/78) ja ettevõtte kogukulu 2026. aastal.",
   offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
 };
 
@@ -115,24 +115,22 @@ export default function DividendPage() {
             Sisesta <strong>soovitud netodividend</strong> – summa, mille omanik tegelikult
             kätte saab – ja kalkulaator arvutab ettevõtte tasutava <strong>tulumaksu</strong>{" "}
             ning <strong>kogukulu</strong>. Arvutuses kasutatakse 2026. aasta kehtivat
-            tulumaksumäära: <strong>24/76</strong> netodividendist (ehk 24% ettevõtte
-            kogukulust).
+            tulumaksumäära: <strong>22/78</strong> netodividendist (ehk 22% ettevõtte
+            kogukulust). Allikas:{" "}
+            <a href="https://www.emta.ee/en/business-client/taxes-and-payment/income-and-social-taxes/taxation-dividends" target="_blank" rel="noopener noreferrer" className="text-[#1E40AF] underline">
+              emta.ee
+            </a>.
           </p>
           <p>
-            <strong>Oluline muutus 2026:</strong> Alates 2025. aastast on kõigi dividendide
-            tulumaksumäär ühtlustunud. Varasem 14/86 soodusmäär regulaarselt makstud
-            dividendidele kaotati 1. jaanuaril 2025 ja ei kehti enam 2026. aastal.
-            2026. aastast tõusis standardmäär 22/78-lt 24/76-le.
+            <strong>Oluline muutus 2025. aastast:</strong> Varasem 14/86 soodusmäär
+            regulaarselt makstud dividendidele kaotati 1. jaanuaril 2025 ja ei kehti enam.
+            2026. aastal jätkub standardmäär 22/78, mis jõustus 2025. aastal.
           </p>
           <p>
             <strong>Eesti dividendisüsteemi eripära:</strong> Eestis ei maksustata kasumit
             enne, kui see ettevõttest välja jaotada. Tulumaksu maksab ettevõte, mitte
             eraisikust omanik – omanik saab dividendi kätte ilma täiendava isikliku
-            maksukohustuseta. Täpsema maksunõustamise saamiseks pöördu raamatupidaja
-            poole. Allikas:{" "}
-            <a href="https://www.emta.ee" target="_blank" rel="noopener noreferrer" className="text-[#1E40AF] underline">
-              emta.ee
-            </a>.
+            maksukohustuseta. Täpsema maksunõustamise saamiseks pöördu raamatupidaja poole.
           </p>
         </div>
 
@@ -141,14 +139,14 @@ export default function DividendPage() {
         {/* Näidete tabel */}
         <section className="mt-12">
           <h2 className="text-xl font-bold text-gray-800 mb-4">
-            Dividendimaksu näited 2026 (määr 24/76)
+            Dividendimaksu näited 2026 (määr 22/78)
           </h2>
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
               <thead>
                 <tr className="bg-[#1E40AF] text-white">
                   <th className="text-left p-3 font-medium">Netodividend (omanikule)</th>
-                  <th className="text-right p-3 font-medium">Tulumaks (×24/76)</th>
+                  <th className="text-right p-3 font-medium">Tulumaks (×22/78)</th>
                   <th className="text-right p-3 font-medium">Ettevõtte kogukulu</th>
                   <th className="text-right p-3 font-medium">Efekt. maksumäär</th>
                 </tr>
@@ -156,45 +154,45 @@ export default function DividendPage() {
               <tbody>
                 <tr className="border-b border-gray-100">
                   <td className="p-3 font-medium text-gray-700">500 €</td>
-                  <td className="p-3 text-right font-mono text-gray-600">157,89 €</td>
-                  <td className="p-3 text-right font-mono font-medium text-gray-800">657,89 €</td>
-                  <td className="p-3 text-right text-gray-600">24,0%</td>
+                  <td className="p-3 text-right font-mono text-gray-600">141,03 €</td>
+                  <td className="p-3 text-right font-mono font-medium text-gray-800">641,03 €</td>
+                  <td className="p-3 text-right text-gray-600">22,0%</td>
                 </tr>
                 <tr className="border-b border-gray-100 bg-gray-50">
                   <td className="p-3 font-medium text-gray-700">1 000 €</td>
-                  <td className="p-3 text-right font-mono text-gray-600">315,79 €</td>
-                  <td className="p-3 text-right font-mono font-medium text-gray-800">1 315,79 €</td>
-                  <td className="p-3 text-right text-gray-600">24,0%</td>
+                  <td className="p-3 text-right font-mono text-gray-600">282,05 €</td>
+                  <td className="p-3 text-right font-mono font-medium text-gray-800">1 282,05 €</td>
+                  <td className="p-3 text-right text-gray-600">22,0%</td>
                 </tr>
                 <tr className="border-b border-gray-100">
                   <td className="p-3 font-medium text-gray-700">5 000 €</td>
-                  <td className="p-3 text-right font-mono text-gray-600">1 578,95 €</td>
-                  <td className="p-3 text-right font-mono font-medium text-gray-800">6 578,95 €</td>
-                  <td className="p-3 text-right text-gray-600">24,0%</td>
+                  <td className="p-3 text-right font-mono text-gray-600">1 410,26 €</td>
+                  <td className="p-3 text-right font-mono font-medium text-gray-800">6 410,26 €</td>
+                  <td className="p-3 text-right text-gray-600">22,0%</td>
                 </tr>
                 <tr className="border-b border-gray-100 bg-gray-50">
                   <td className="p-3 font-medium text-gray-700">10 000 €</td>
-                  <td className="p-3 text-right font-mono text-gray-600">2 631,58 €</td>
-                  <td className="p-3 text-right font-mono font-medium text-gray-800">12 631,58 €</td>
-                  <td className="p-3 text-right text-gray-600">24,0%</td>
+                  <td className="p-3 text-right font-mono text-gray-600">2 820,51 €</td>
+                  <td className="p-3 text-right font-mono font-medium text-gray-800">12 820,51 €</td>
+                  <td className="p-3 text-right text-gray-600">22,0%</td>
                 </tr>
                 <tr className="border-b border-gray-100">
                   <td className="p-3 font-medium text-gray-700">25 000 €</td>
-                  <td className="p-3 text-right font-mono text-gray-600">7 894,74 €</td>
-                  <td className="p-3 text-right font-mono font-medium text-gray-800">32 894,74 €</td>
-                  <td className="p-3 text-right text-gray-600">24,0%</td>
+                  <td className="p-3 text-right font-mono text-gray-600">7 051,28 €</td>
+                  <td className="p-3 text-right font-mono font-medium text-gray-800">32 051,28 €</td>
+                  <td className="p-3 text-right text-gray-600">22,0%</td>
                 </tr>
                 <tr>
                   <td className="p-3 font-medium text-gray-700">50 000 €</td>
-                  <td className="p-3 text-right font-mono text-gray-600">15 789,47 €</td>
-                  <td className="p-3 text-right font-mono font-medium text-gray-800">65 789,47 €</td>
-                  <td className="p-3 text-right text-gray-600">24,0%</td>
+                  <td className="p-3 text-right font-mono text-gray-600">14 102,56 €</td>
+                  <td className="p-3 text-right font-mono font-medium text-gray-800">64 102,56 €</td>
+                  <td className="p-3 text-right text-gray-600">22,0%</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p className="text-xs text-gray-400 mt-2">
-            * Kehtiv määr 2026. aastal: 24/76. Allikas: emta.ee. Täpse maksunõustamise saamiseks pöördu raamatupidaja poole.
+            * Kehtiv määr 2026. aastal: 22/78. Allikas: emta.ee. Täpse maksunõustamise saamiseks pöördu raamatupidaja poole.
           </p>
         </section>
 
@@ -218,15 +216,10 @@ export default function DividendPage() {
                   <td className="p-3 text-right font-mono text-gray-700">20/80</td>
                   <td className="p-3 text-gray-600">Soodusmäär 14/86 regulaarselt makstud dividendidele</td>
                 </tr>
-                <tr className="border-b border-gray-100 bg-gray-50">
-                  <td className="p-3 text-gray-700">1.01.2025 – 31.12.2025</td>
-                  <td className="p-3 text-right font-mono text-gray-700">22/78</td>
-                  <td className="p-3 text-gray-600">14/86 soodusmäär kaotati</td>
-                </tr>
                 <tr className="bg-blue-50">
-                  <td className="p-3 font-medium text-[#1E40AF]">1.01.2026 – …</td>
-                  <td className="p-3 text-right font-mono font-bold text-[#1E40AF]">24/76</td>
-                  <td className="p-3 text-gray-600 font-medium">Kehtiv määr</td>
+                  <td className="p-3 font-medium text-[#1E40AF]">1.01.2025 – …</td>
+                  <td className="p-3 text-right font-mono font-bold text-[#1E40AF]">22/78</td>
+                  <td className="p-3 text-gray-600 font-medium">14/86 soodusmäär kaotati. Kehtib 2026. aastal.</td>
                 </tr>
               </tbody>
             </table>

@@ -1,10 +1,9 @@
 // Dividendi arvutuslogika – Eesti maksud 2026
-// Allikas: emta.ee
-// NB: 2026. aastast kehtib tulumaksumäär 24/76 (tõusis 22/78-lt).
-// 14/86 soodusmäär kaotati alates 1. jaanuarist 2025.
+// Allikas: emta.ee (emta.ee/en/business-client/taxes-and-payment/income-and-social-taxes/taxation-dividends)
+// Määr 22/78 kehtib alates 1. jaanuarist 2025. 14/86 soodusmäär kaotati 2025. aastal.
 
-export const TULUMAKS_MAAR = 24;
-export const TULUMAKS_NIMETAJA = 76;
+export const TULUMAKS_MAAR = 22;
+export const TULUMAKS_NIMETAJA = 78;
 
 export interface DividendResult {
   netodividend: number;
