@@ -44,7 +44,7 @@ const faqSchema = {
       name: 'Kas hoiuse intressilt peab tulumaksu maksma?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Alates 2025. aastast on eraisikutel hoiuseintressilt saadav tulu Eestis maksuvaba kuni 1 000 euro ulatuses aastas (nn säästuintresside maksuvabastus). Üle selle summa maksustatakse tulumaksuga 22%. Pank peab tulumaksu kinni automaatselt ning sa ei pea seda ise deklareerima.',
+        text: 'Jah. Hoiuseintress on Eestis maksustatav esimesest eurost alates tulumaksumääraga 22%. Pank peab tulumaksu automaatselt kinni iga intressi väljamakse hetkel — eraldi deklareerima ei pea. Täpsemat infot leiab Maksu- ja Tolliameti kodulehelt emta.ee.',
       },
     },
     {
