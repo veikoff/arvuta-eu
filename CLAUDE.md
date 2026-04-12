@@ -30,44 +30,61 @@ Eesmärk: passiivne tulu Google AdSense + affiliate linkide kaudu.
 
 ## Kalkulaatorid
 
-### 1. /automaks – Automaksu kalkulaator 2026
+### ✅ 1. /automaks – Automaksu kalkulaator 2026
 Sisendid: CO2 (g/km), võimsus (kW), aasta, kütus (bensiin/diisel/elekter/hübriid)
 Väljund: registreerimistaks (€), aastamaks (€), selgitus
 Allikas: Eesti automaksu seadus 2026 (riigiteataja.ee)
 
-### 2. /netopalk – Netopalga kalkulaator 2026
+### ✅ 2. /netopalk – Netopalga kalkulaator 2026
 Sisendid: brutopalk (€/kuus), II sammas (jah/ei)
 Väljund: netopalk, tulumaks 22%, sotsiaalmaks 33%,
 töötukindlustus 1.6%, II sammas 2%, arvutuse kirjeldus
 
-### 2b. /brutopalk – Brutopalgast netopalk (tagurpidi)
+### ✅ 2b. /brutopalk – Brutopalgast netopalk (tagurpidi)
 Sisendid: netopalk (€/kuus), II sammas (jah/ei)
 Väljund: brutopalk, tulumaks, sotsiaalmaks, töötukindlustus, tööandja kogukulu
 Loogika: binaarne otsing – leiab brutopalgaväärtuse millele vastab sisestatud netopalk
 
-### 3. /laen – Laenukalkulaator
+### ✅ 3. /laen – Laenukalkulaator
 Sisendid: summa (€), intress (%), periood (kuud), tüüp (annuiteet/võrdne)
 Väljund: kuumakse, koguintress, tagasimakse graafik (Recharts)
 
-### 4. /kodulaen – Kodulaenu kalkulaator
+### ❌ 4. /kodulaen – Kodulaenu kalkulaator
 Sisendid: kinnisvara hind (€), omafinantseering (%), intress (%), periood
 Väljund: laenusumma, kuumakse, kogukulu
 
-### 6. /fie – FIE maksude kalkulaator 2026
+### ✅ 5. /hoiused – Hoiusekalkulaator
+Sisendid: summa (€), periood (kuud)
+Väljund: tootlus pankade lõikes, parim intress, lõppsumma
+Andmed: live-scraper (hoiused-scraper @ Mac Mini, Docker + cron) → Vercel Blob
+Pangad: Swedbank, LHV, SEB, Luminor, Coop Pank, Holm Bank, Inbank, Bigbank
+Uueneb: iga päev kell 03:00 EEST automaatselt
+
+### ❌ 6. /fie – FIE maksude kalkulaator 2026
 Sisendid: aastane käive (€), kulud (€), II sammas (jah/ei)
 Väljund: tulumaks, sotsiaalmaks, netotulu, efektiivne maksumäär
 
-### 7. /ou-palk-dividend – OÜ palk vs dividend
+### ✅ 7. /dividend – OÜ dividendi kalkulaator
+Sisendid: dividendi brutosumma (€)
+Väljund: netodividend pärast tulumaksu
+
+### ❌ 8. /ou-palk-dividend – OÜ palk vs dividend
 Sisendid: OÜ kasum enne makse (€), jaotus slider (% palk vs dividend)
 Väljund: kõrvuti netotulu võrdlus mõlema variandiga
 
-### 8. /saastud – Säästude kalkulaator
-Sisendid: algsumma (€), igakuine lisasääst (€), intress (%), periood (aastad)
-Väljund: lõppsumma, koguintress, kasvu graafik (Recharts)
+### ✅ 9. /saastud – Säästude kalkulaator
+Lahendatud /hoiused kaudu — live intressimäärad + tootluse arvutus
 
-### 9. /uuritootlus – Üüritootluse kalkulaator
+### ❌ 10. /uuritootlus – Üüritootluse kalkulaator
 Sisendid: hind (€), üüritulu (€/kuus), kulud (€/kuus)
 Väljund: brutorentaablus (%), netarentaablus (%), tasuvusaeg
+
+## hoiused-scraper (Mac Mini)
+Asukoht: /Users/veikovetto/hoiused-scraper
+Stack: Node.js + TypeScript + Docker + crond
+Repo: https://github.com/veikoff/hoiused-scraper (privaatne)
+Käivitamine: docker compose up -d
+Env: .env (ARVUTA_API_URL, ARVUTA_API_KEY) — ei lähe giti
 
 ## SEO – iga kalkulaatori leht
 - Unikaalne <title> ja <meta description> eesti keeles
