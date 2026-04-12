@@ -26,6 +26,7 @@ export async function POST(req: NextRequest) {
       access: 'public',
       contentType: 'application/json',
       addRandomSuffix: false,
+      allowOverwrite: true,
     })
   } catch (err) {
     console.error('Blob PUT failed:', err)
