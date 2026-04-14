@@ -1,4 +1,5 @@
 import { put } from '@vercel/blob'
+import { revalidatePath } from 'next/cache'
 import { NextRequest, NextResponse } from 'next/server'
 
 export async function POST(req: NextRequest) {
@@ -32,6 +33,8 @@ export async function POST(req: NextRequest) {
     console.error('Blob PUT failed:', err)
     return NextResponse.json({ error: String(err) }, { status: 500 })
   }
+
+  revalidatePath('/hoiused')
 
   return NextResponse.json({ ok: true, url: blob.url })
 }
