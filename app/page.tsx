@@ -19,6 +19,12 @@ const categories = [
       { href: "/automaks", label: "Automaksu kalkulaator", desc: "Registreerimis- ja aastamaks 2026" },
     ],
   },
+  {
+    title: "Säästmine & investeerimine",
+    items: [
+      { href: "/hoiused", label: "Hoiusekalkulaator", desc: "Võrdle LHV, SEB, Swedbank jt pankade päris intresse — uuendatakse iga päev automaatselt" },
+    ],
+  },
   // TODO: lisatakse kui kalkulaatorid valmis
   // {
   //   title: "Laenud & kinnisvara",
