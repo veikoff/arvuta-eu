@@ -121,5 +121,24 @@ Env: .env (ARVUTA_API_URL, ARVUTA_API_KEY) — ei lähe giti
 npm run dev    → localhost:3000
 npm run build  → production build
 vercel deploy  → deploy Vercelile
-```
 
+## Tulevased tööd
+
+### Genereeri /hoiused KKK vastused live-andmetest
+KKK vastused on praegu kõvakodeeritud `app/hoiused/page.tsx`-is. Varem sisaldasid
+need konkreetseid intressimäärasid, mis vananesid märkamatult — aprilli numbrid
+seisid lehel septembrini ja läksid `FAQPage` JSON-LD kaudu ka Google'i rich
+results'i. 20.09.2026 kirjutati tekstid numbriteta ümber, mis lahendab vananemise,
+aga kaotab SEO-väärtuse: konkreetsete summadega vastused ("kui palju teenib
+10 000 €") toovad long-tail otsinguliiklust.
+
+Õige lahendus: genereeri vastused `faqSchema`-sse serveris blobi andmetest, nii et
+numbrid on alati õiged ega saagi vananeda. Samad andmed lähevad nii nähtavasse
+KKK-sse kui JSON-LD-sse.
+
+Arvesta:
+- kui andmed on vananenud (vt `STALE_AFTER_HOURS`), ära pane numbreid JSON-LD-sse
+  — parem numbriteta vastus kui vale number Google'is
+- leht on ISR (`revalidate = 3600`), seega numbrid uuenevad koos lehega
+- hoia vastused täislausetena, Google nõuab FAQPage-is sisulist teksti
+```

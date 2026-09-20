@@ -28,7 +28,7 @@ const faqSchema = {
       name: 'Millises pangas on Eestis parim hoiuseintress?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Intressimäärad muutuvad pidevalt. Arvuta.eu uuendab kõigi Eesti pankade hoiuseintresse automaatselt iga päev. 2026. aasta aprilli seisuga pakuvad kõrgemaid intresse väiksemad pangad nagu Holm Bank (kuni 2,80%), Inbank ja Bigbank (kuni 2,60%). Suured pangad (Swedbank, SEB, LHV) pakuvad 2,00–2,05% 12-kuulisele hoiusele.',
+        text: 'Intressimäärad muutuvad pidevalt, seega ei ole ühtegi panka, mis oleks alati parim. Arvuta.eu laadib kõigi Eesti pankade hoiuseintressid automaatselt iga päev otse pankade kodulehtedelt ja kalkulaator näitab hetkel kehtivat pingerida sinu valitud summa ning perioodi kohta. Üldise suundumusena pakuvad väiksemad pangad nagu Holm Bank, Inbank, Bigbank ja Coop Pank kõrgemaid intresse kui suurpangad Swedbank, SEB, LHV ja Luminor, kuid vahe suurus kõigub ajas. Pikem tähtaeg annab tavaliselt parema intressimäära kui lühike.',
       },
     },
     {
@@ -52,7 +52,7 @@ const faqSchema = {
       name: 'Kui palju teenib 10 000 eurot hoiusel aastaga?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '10 000 euro paigutamisel 12-kuulisele hoiusele teenid 2026. aasta intressimääradega: Holm Bank 2,70% juures 270 €, Bigbank 2,60% juures 260 €, Inbank 2,50% juures 250 €, Coop Pank ja SEB 2,00–2,10% juures 200–210 €, Swedbank 2,05% juures 205 €. Kasuta kalkulaatorit täpse summa arvutamiseks oma valitud perioodi jaoks.',
+        text: 'Aastane tootlus sõltub sellest, millise panga ja intressimäära valid. Aastase hoiuse puhul on arvutus lihtne: korruta hoiuse summa intressimääraga — näiteks kaks protsenti 10 000 eurolt teeb 200 eurot. Sisesta summa ja periood ülaltoodud kalkulaatorisse ning näed iga panga kohta täpset teenitavat intressi ja lõppsummat hetkel kehtivate määradega. Arvesta, et kalkulaator näitab brutotootlust — pank peab intressilt kinni 22% tulumaksu.',
       },
     },
     {
