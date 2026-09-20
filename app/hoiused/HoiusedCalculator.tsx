@@ -17,9 +17,10 @@ function formatEur(value: number): string {
 interface Props {
   banks: BankData[]
   updatedAt: string
+  isStale?: boolean
 }
 
-export default function HoiusedCalculator({ banks, updatedAt }: Props) {
+export default function HoiusedCalculator({ banks, updatedAt, isStale = false }: Props) {
   const [amount, setAmount] = useState(10_000)
   const [amountRaw, setAmountRaw] = useState('10000')
   const [term, setTerm] = useState<TermMonths>(12)
@@ -58,8 +59,11 @@ export default function HoiusedCalculator({ banks, updatedAt }: Props) {
     banks.some((b) => b.rates.some((r) => r.months === m))
   )
 
+  // Ajavöönd tuleb fikseerida, muidu vormindab server (UTC) ja brauser (Tallinn)
+  // erineva kellaaja ning tekib hydration mismatch.
   const updatedDate = new Date(updatedAt).toLocaleDateString('et-EE', {
     day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit',
+    timeZone: 'Europe/Tallinn',
   })
 
   return (
@@ -68,7 +72,9 @@ export default function HoiusedCalculator({ banks, updatedAt }: Props) {
       <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
         <div className="flex items-center justify-between mb-5">
           <h2 className="text-lg font-bold text-[#1E40AF]">Arvuta hoiuse tootlus</h2>
-          <span className="text-xs text-gray-400">Uuendatud: {updatedDate}</span>
+          <span className={isStale ? 'text-xs font-medium text-amber-700' : 'text-xs text-gray-400'}>
+            Uuendatud: {updatedDate}
+          </span>
         </div>
 
         <div className="flex flex-col sm:flex-row gap-5">

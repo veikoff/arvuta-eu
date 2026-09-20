@@ -101,8 +101,22 @@ async function getRates(): Promise<RatesPayload | null> {
   }
 }
 
+// Scraper uuendab andmeid iga päev kell 03:00. Kui viimasest uuendusest on
+// möödunud rohkem kui STALE_AFTER_HOURS, on midagi katki — näita seda kasutajale
+// ega lase tal vananenud intressimäärade pealt otsuseid teha.
+const STALE_AFTER_HOURS = 72
+
+function getAgeHours(updatedAt: string): number | null {
+  const ts = new Date(updatedAt).getTime()
+  if (Number.isNaN(ts)) return null
+  return (Date.now() - ts) / 3_600_000
+}
+
 export default async function HoiusedPage() {
   const data = await getRates()
+  const ageHours = data ? getAgeHours(data.updatedAt) : null
+  const isStale = ageHours !== null && ageHours > STALE_AFTER_HOURS
+  const staleDays = ageHours !== null ? Math.floor(ageHours / 24) : 0
 
   return (
     <>
@@ -139,8 +153,21 @@ export default async function HoiusedPage() {
           Reklaam
         </div>
 
+        {data && isStale && (
+          <div
+            role="alert"
+            className="rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900"
+          >
+            <p className="font-semibold">Tähelepanu: intressimäärad ei ole värsked</p>
+            <p className="mt-1 leading-relaxed">
+              Andmeid uuendati viimati {staleDays} päeva tagasi, kuigi need peaksid uuenema iga päev.
+              Automaatne uuendus on tõrkunud. Kontrolli kehtivat intressimäära otse panga kodulehelt.
+            </p>
+          </div>
+        )}
+
         {data ? (
-          <HoiusedCalculator banks={data.banks} updatedAt={data.updatedAt} />
+          <HoiusedCalculator banks={data.banks} updatedAt={data.updatedAt} isStale={isStale} />
         ) : (
           <div className="bg-white rounded-2xl border border-gray-200 p-10 text-center text-gray-500">
             <p className="text-lg font-medium">Andmeid laaditakse...</p>
