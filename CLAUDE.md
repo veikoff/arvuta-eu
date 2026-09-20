@@ -141,4 +141,45 @@ Arvesta:
   — parem numbriteta vastus kui vale number Google'is
 - leht on ISR (`revalidate = 3600`), seega numbrid uuenevad koos lehega
 - hoia vastused täislausetena, Google nõuab FAQPage-is sisulist teksti
+
+### Koli scrape Mac Minist Vercel Croni
+Praegu jookseb scraper Mac Minis (Docker + crond) ja POSTib tulemuse
+`/api/rates`-i, mis kirjutab Vercel Blobi. Kogu ahel sõltub sellest, et üks
+koduarvuti on töökorras. 26.07.2026 suri konteiner ja andmed seisid 8 nädalat.
+
+Masin on nõrgim lüli kahel põhjusel:
+- **FileVault on sees ja automaatne sisselogimine puudub** — pärast
+  voolukatkestust jääb Mac ketta avamise ekraanile ega käivita midagi, kuni
+  keegi füüsiliselt parooli sisestab. Ükski taaskäivituspoliitika ega
+  watchdog seda ei lahenda.
+- Docker Desktopi uuendused ja macOS-i restardid tapavad konteinereid.
+
+Migratsioon on oodatust lihtsam, sest **ükski pangascraper ei vaja brauserit** —
+kõik kaheksa failis `src/banks/*.ts` kasutavad tavalist `fetch`-i. Playwright on
+ainult `discover.ts`-is, mis on käsitsi kasutatav arendustööriist ega pea
+Vercelisse minema. Seega ei ole vaja 5 GB bundle'it ega Chromiumi.
+
+Sammud:
+1. kopeeri `src/banks/*.ts` + `types.ts` arvuta-eu repos `lib/scrapers/` alla
+2. loo `app/api/cron/scrape-rates/route.ts`, mis kutsub scraperid ja kirjutab
+   otse `put()`-iga Blobi + `revalidatePath('/hoiused')` — vahepealset
+   HTTP-päringut ega `ARVUTA_API_KEY`-d enam vaja
+3. kaitse route `CRON_SECRET`-iga (`authorization: Bearer <secret>`)
+4. lisa `vercel.json`-i: `"crons": [{"path": "/api/cron/scrape-rates",
+   "schedule": "0 0 * * *"}]`
+5. testi `vercel crons run /api/cron/scrape-rates`
+6. alles siis lülita Mac Mini konteiner ja watchdog välja
+
+Enne kolimist kontrolli kahte asja:
+- **Kas pangad lubavad Verceli IP-sid?** Praegu tulevad päringud Eesti
+  koduühenduselt. Osa panku võib pilveteenuste IP-blokke filtreerida — see on
+  ainus päris risk ja seda saab testida alles preview deploy pealt.
+- Cron-limiit selle konto plaanil (Hobby lubab harvemat sagedust kui Pro).
+  Üks kord ööpäevas peaks mahtuma, aga kontrolli enne.
+
+Cron käib UTC ajas, seega `0 0 * * *` on suveajal 03:00 ja talveajal 02:00
+Eesti aega. Hoiuseintresside puhul pole see oluline.
+
+Kui see valmis, kaovad: Docker, `watchdog.sh`, launchd agent, FileVault'i
+sõltuvus ja `hoiused-scraper` repo kui eraldi deploy-üksus.
 ```
